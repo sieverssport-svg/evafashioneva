@@ -13,7 +13,7 @@ width: 100%;
 min-height: 100%;
 background: #000;
 font-family: Georgia, "Times New Roman", serif;
-color: #d6ad4b;
+color: #d8b04d;
 }
 
 body { overflow-x: hidden; }
@@ -24,31 +24,25 @@ width: 100%;
 max-width: 430px;
 min-height: 100vh;
 margin: 0 auto;
-padding: 42px 22px 26px;
+padding: 40px 20px 26px;
 overflow: hidden;
 background: #000;
 }
 
+/* ФОТО МОДЕЛИ */
 .page::before {
 content: "";
 position: absolute;
 inset: 0;
-background-image:
-linear-gradient(
-180deg,
-rgba(0,0,0,0.08) 0%,
-rgba(0,0,0,0.18) 28%,
-rgba(0,0,0,0.38) 58%,
-rgba(0,0,0,0.88) 100%
-),
-url("eva-bg.jpg");
+background-image: url("eva-bg.jpg");
 background-size: cover;
-background-position: center top;
-filter: brightness(0.42) contrast(1.45) saturate(0.75);
-transform: scale(1.01);
+background-position: center 18%;
+filter: brightness(0.34) contrast(1.42) saturate(0.78);
+transform: scale(1.015);
 z-index: 0;
 }
 
+/* ТЕМНОЕ СТЕКЛО */
 .page::after {
 content: "";
 position: absolute;
@@ -56,25 +50,40 @@ inset: 0;
 z-index: 1;
 pointer-events: none;
 background:
-radial-gradient(circle at 50% 8%, rgba(218,174,70,.18), transparent 32%),
-linear-gradient(90deg, rgba(0,0,0,.9), transparent 21%, transparent 79%, rgba(0,0,0,.9)),
-linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.55));
-backdrop-filter: blur(.6px);
--webkit-backdrop-filter: blur(.6px);
+radial-gradient(circle at 50% 12%, rgba(222,174,64,.24), transparent 30%),
+radial-gradient(circle at 50% 38%, transparent 0%, rgba(0,0,0,.32) 68%),
+linear-gradient(90deg, rgba(0,0,0,.92), transparent 24%, transparent 76%, rgba(0,0,0,.92)),
+linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.82));
+backdrop-filter: blur(.35px);
+-webkit-backdrop-filter: blur(.35px);
 }
 
+/* ФАКТУРА МОКРОГО СТЕКЛА */
 .rain-glass {
 position: absolute;
 inset: 0;
 z-index: 2;
 pointer-events: none;
-opacity: .72;
+opacity: .85;
 mix-blend-mode: screen;
 background:
-radial-gradient(ellipse at 20% 13%, rgba(255,210,110,.22), transparent 28%),
-radial-gradient(ellipse at 82% 18%, rgba(255,210,110,.15), transparent 24%),
-repeating-radial-gradient(circle at 35% 20%, rgba(255,255,255,.06) 0 1px, transparent 1px 5px),
-repeating-linear-gradient(105deg, rgba(255,255,255,.045) 0 1px, transparent 1px 8px);
+radial-gradient(ellipse at 18% 10%, rgba(255,205,100,.26), transparent 24%),
+radial-gradient(ellipse at 84% 18%, rgba(255,205,100,.13), transparent 26%),
+radial-gradient(ellipse at 10% 78%, rgba(255,175,50,.18), transparent 22%),
+repeating-radial-gradient(circle at 42% 18%, rgba(255,255,255,.06) 0 1px, transparent 1px 5px),
+repeating-linear-gradient(100deg, rgba(255,255,255,.045) 0 1px, transparent 1px 9px);
+}
+
+/* ЗАТЕМНЕНИЕ НИЗА */
+.bottom-shadow {
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+height: 42%;
+z-index: 2;
+pointer-events: none;
+background: linear-gradient(180deg, transparent, rgba(0,0,0,.88));
 }
 
 .content {
@@ -83,52 +92,58 @@ z-index: 3;
 text-align: center;
 }
 
+.hero {
+padding-top: 260px;
+margin-bottom: 22px;
+}
+
 .crown {
-font-size: 28px;
+font-size: 31px;
 margin-bottom: 4px;
-color: #f2cc62;
-text-shadow: 0 0 14px rgba(220,170,60,.9);
+color: #f1ca60;
+text-shadow: 0 0 16px rgba(225,178,70,.95);
 }
 
 h1 {
-font-size: 76px;
-line-height: .84;
-letter-spacing: 10px;
-color: #f4cf66;
+font-size: 82px;
+line-height: .82;
+letter-spacing: 11px;
+color: #f5ce64;
 text-shadow:
-0 0 8px rgba(255,225,125,.8),
-0 0 26px rgba(218,174,70,.55),
-0 8px 18px rgba(0,0,0,.95);
+0 0 8px rgba(255,225,130,.9),
+0 0 28px rgba(218,174,70,.62),
+0 8px 22px rgba(0,0,0,.95);
 }
 
 .brand {
 margin-top: 12px;
-font-size: 22px;
-letter-spacing: 8px;
-color: #ddb755;
+font-size: 23px;
+letter-spacing: 9px;
+color: #ddb756;
+text-shadow: 0 0 18px rgba(218,174,70,.48);
 }
 
 .divider {
 width: 74%;
 height: 1px;
 margin: 14px auto 0;
-background: linear-gradient(90deg, transparent, rgba(214,173,75,.8), transparent);
+background: linear-gradient(90deg, transparent, rgba(214,173,75,.82), transparent);
 }
 
 .tagline {
 margin-top: 15px;
 font-size: 11px;
-letter-spacing: 3.2px;
+letter-spacing: 3.4px;
 text-transform: uppercase;
-color: #dab963;
+color: #d9b75c;
 }
 
 .welcome {
-margin-top: 25px;
+margin-top: 27px;
 font-size: 13px;
-letter-spacing: 2.6px;
+letter-spacing: 2.8px;
 text-transform: uppercase;
-color: #e6c86b;
+color: #e4c66a;
 }
 
 .subtitle {
@@ -140,7 +155,7 @@ color: #c99e3a;
 }
 
 .links {
-width: 88%;
+width: 86%;
 margin: 0 auto;
 display: flex;
 flex-direction: column;
@@ -156,14 +171,14 @@ min-height: 56px;
 padding: 0 14px;
 text-decoration: none;
 color: #f1cc66;
-border: 1px solid rgba(214,173,75,.76);
+border: 1px solid rgba(214,173,75,.78);
 border-radius: 7px;
-background: rgba(0,0,0,.28);
+background: rgba(0,0,0,.27);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 box-shadow:
 inset 0 0 16px rgba(214,173,75,.05),
-0 0 14px rgba(214,173,75,.11);
+0 0 14px rgba(214,173,75,.12);
 }
 
 .link-card::before {
@@ -177,7 +192,7 @@ background: linear-gradient(
 120deg,
 transparent,
 rgba(255,222,132,.08),
-rgba(255,222,132,.55),
+rgba(255,222,132,.58),
 rgba(255,222,132,.08),
 transparent
 );
@@ -232,7 +247,7 @@ pointer-events: none;
 }
 
 .age-box {
-width: 88%;
+width: 86%;
 margin: 12px auto 0;
 padding: 11px 14px;
 min-height: 54px;
@@ -241,7 +256,7 @@ border-radius: 7px;
 display: flex;
 align-items: center;
 gap: 13px;
-background: rgba(0,0,0,.3);
+background: rgba(0,0,0,.30);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 }
@@ -297,8 +312,15 @@ color: #9b7932;
 100% { left: 135%; }
 }
 
+/* iPhone / narrow screen */
 @media (max-width: 390px) {
-.page { padding: 34px 14px 22px; }
+.page {
+padding: 34px 14px 22px;
+}
+
+.hero {
+padding-top: 235px;
+}
 
 h1 {
 font-size: 66px;
@@ -329,8 +351,10 @@ min-height: 54px;
 <body>
 <main class="page">
 <div class="rain-glass"></div>
+<div class="bottom-shadow"></div>
 
 <div class="content">
+<section class="hero">
 <div class="crown">♛</div>
 <h1>EVA</h1>
 <div class="brand">FASHIONEVA</div>
@@ -340,6 +364,7 @@ min-height: 54px;
 
 <div class="welcome">Welcome to my private world</div>
 <div class="subtitle">select your access</div>
+</section>
 
 <section class="links">
 <a class="link-card" href="https://onlyfans.com/fashioneva" target="_blank">
@@ -361,7 +386,7 @@ min-height: 54px;
 </a>
 
 <a class="link-card" href="https://t.me/evafashioneva" target="_blank">
-<div class="icon">✦</div>
+<div class="icon">✈</div>
 <div class="text">
 <div class="title">Telegram</div>
 <div class="desc">Private channel</div>
@@ -398,14 +423,14 @@ You must be 18 years or older to enter
 
 <div class="socials">
 <span>◎</span>
-<span>✦</span>
+<span>✈</span>
 <span>✉</span>
 </div>
 
 <div class="monogram">EF</div>
-
 <footer>All rights reserved</footer>
 </div>
 </main>
 </body>
 </html>
+
