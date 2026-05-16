@@ -6,7 +6,11 @@
 <title>Eva Fashioneva</title>
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
 html, body {
 width: 100%;
@@ -16,7 +20,9 @@ font-family: Georgia, "Times New Roman", serif;
 color: #d8b04d;
 }
 
-body { overflow-x: hidden; }
+body {
+overflow-x: hidden;
+}
 
 .page {
 position: relative;
@@ -24,25 +30,24 @@ width: 100%;
 max-width: 430px;
 min-height: 100vh;
 margin: 0 auto;
-padding: 40px 20px 26px;
+padding: 40px 18px 26px;
 overflow: hidden;
 background: #000;
 }
 
-/* ФОТО МОДЕЛИ */
+/* ГОТОВЫЙ AI-ФОН */
 .page::before {
 content: "";
 position: absolute;
 inset: 0;
-background-image: url("eva-bg.jpg");
+background-image: url("lux-bg.jpg");
 background-size: cover;
-background-position: center 18%;
-filter: brightness(0.34) contrast(1.42) saturate(0.78);
-transform: scale(1.015);
+background-position: center top;
+filter: brightness(0.82) contrast(1.08) saturate(0.9);
 z-index: 0;
 }
 
-/* ТЕМНОЕ СТЕКЛО */
+/* ЛЕГКОЕ ЗАТЕМНЕНИЕ ДЛЯ ЧИТАЕМОСТИ */
 .page::after {
 content: "";
 position: absolute;
@@ -50,40 +55,29 @@ inset: 0;
 z-index: 1;
 pointer-events: none;
 background:
-radial-gradient(circle at 50% 12%, rgba(222,174,64,.24), transparent 30%),
-radial-gradient(circle at 50% 38%, transparent 0%, rgba(0,0,0,.32) 68%),
-linear-gradient(90deg, rgba(0,0,0,.92), transparent 24%, transparent 76%, rgba(0,0,0,.92)),
-linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.82));
-backdrop-filter: blur(.35px);
--webkit-backdrop-filter: blur(.35px);
+linear-gradient(180deg,
+rgba(0,0,0,0.12) 0%,
+rgba(0,0,0,0.22) 34%,
+rgba(0,0,0,0.54) 68%,
+rgba(0,0,0,0.9) 100%
+),
+linear-gradient(90deg,
+rgba(0,0,0,0.76) 0%,
+rgba(0,0,0,0.12) 28%,
+rgba(0,0,0,0.12) 72%,
+rgba(0,0,0,0.76) 100%
+);
 }
 
-/* ФАКТУРА МОКРОГО СТЕКЛА */
-.rain-glass {
+/* МЯГКИЙ GOLD GLOW */
+.gold-glow {
 position: absolute;
 inset: 0;
 z-index: 2;
 pointer-events: none;
-opacity: .85;
-mix-blend-mode: screen;
 background:
-radial-gradient(ellipse at 18% 10%, rgba(255,205,100,.26), transparent 24%),
-radial-gradient(ellipse at 84% 18%, rgba(255,205,100,.13), transparent 26%),
-radial-gradient(ellipse at 10% 78%, rgba(255,175,50,.18), transparent 22%),
-repeating-radial-gradient(circle at 42% 18%, rgba(255,255,255,.06) 0 1px, transparent 1px 5px),
-repeating-linear-gradient(100deg, rgba(255,255,255,.045) 0 1px, transparent 1px 9px);
-}
-
-/* ЗАТЕМНЕНИЕ НИЗА */
-.bottom-shadow {
-position: absolute;
-left: 0;
-right: 0;
-bottom: 0;
-height: 42%;
-z-index: 2;
-pointer-events: none;
-background: linear-gradient(180deg, transparent, rgba(0,0,0,.88));
+radial-gradient(circle at 50% 27%, rgba(230,180,65,0.16), transparent 28%),
+radial-gradient(circle at 12% 16%, rgba(255,190,70,0.12), transparent 22%);
 }
 
 .content {
@@ -92,15 +86,16 @@ z-index: 3;
 text-align: center;
 }
 
+/* HERO */
 .hero {
-padding-top: 260px;
+padding-top: 250px;
 margin-bottom: 22px;
 }
 
 .crown {
-font-size: 31px;
+font-size: 30px;
 margin-bottom: 4px;
-color: #f1ca60;
+color: #f0c75d;
 text-shadow: 0 0 16px rgba(225,178,70,.95);
 }
 
@@ -111,7 +106,7 @@ letter-spacing: 11px;
 color: #f5ce64;
 text-shadow:
 0 0 8px rgba(255,225,130,.9),
-0 0 28px rgba(218,174,70,.62),
+0 0 26px rgba(218,174,70,.62),
 0 8px 22px rgba(0,0,0,.95);
 }
 
@@ -154,6 +149,7 @@ font-style: italic;
 color: #c99e3a;
 }
 
+/* LINKS */
 .links {
 width: 86%;
 margin: 0 auto;
@@ -173,9 +169,9 @@ text-decoration: none;
 color: #f1cc66;
 border: 1px solid rgba(214,173,75,.78);
 border-radius: 7px;
-background: rgba(0,0,0,.27);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
+background: rgba(0,0,0,.24);
+backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(4px);
 box-shadow:
 inset 0 0 16px rgba(214,173,75,.05),
 0 0 14px rgba(214,173,75,.12);
@@ -246,6 +242,7 @@ opacity: .45;
 pointer-events: none;
 }
 
+/* AGE */
 .age-box {
 width: 86%;
 margin: 12px auto 0;
@@ -256,9 +253,9 @@ border-radius: 7px;
 display: flex;
 align-items: center;
 gap: 13px;
-background: rgba(0,0,0,.30);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
+background: rgba(0,0,0,.28);
+backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(4px);
 }
 
 .age {
@@ -312,7 +309,7 @@ color: #9b7932;
 100% { left: 135%; }
 }
 
-/* iPhone / narrow screen */
+/* PHONE */
 @media (max-width: 390px) {
 .page {
 padding: 34px 14px 22px;
@@ -350,8 +347,7 @@ min-height: 54px;
 
 <body>
 <main class="page">
-<div class="rain-glass"></div>
-<div class="bottom-shadow"></div>
+<div class="gold-glow"></div>
 
 <div class="content">
 <section class="hero">
@@ -433,4 +429,3 @@ You must be 18 years or older to enter
 </main>
 </body>
 </html>
-
