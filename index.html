@@ -14,9 +14,7 @@ box-sizing: border-box;
 
 body {
 min-height: 100vh;
-background:
-radial-gradient(circle at top, rgba(212, 175, 55, 0.18), transparent 35%),
-linear-gradient(180deg, #050505 0%, #000 100%);
+background: #000;
 color: #d4af37;
 font-family: Georgia, "Times New Roman", serif;
 overflow-x: hidden;
@@ -27,67 +25,129 @@ width: 100%;
 max-width: 430px;
 margin: 0 auto;
 min-height: 100vh;
-padding: 40px 22px 28px;
+padding: 38px 20px 28px;
 position: relative;
+overflow: hidden;
+background: #000;
+}
+
+.page::before {
+content: "";
+position: absolute;
+inset: 0;
+background-image:
+linear-gradient(
+180deg,
+rgba(0,0,0,0.35) 0%,
+rgba(0,0,0,0.45) 30%,
+rgba(0,0,0,0.72) 65%,
+rgba(0,0,0,0.96) 100%
+),
+url("eva-bg.jpg");
+background-size: cover;
+background-position: center top;
+filter: brightness(0.52) contrast(1.12) saturate(0.8);
+transform: scale(1.04);
+z-index: 0;
+}
+
+.page::after {
+content: "";
+position: absolute;
+inset: 0;
+background:
+radial-gradient(circle at 50% 8%, rgba(212,175,55,0.22), transparent 36%),
+radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.45) 72%),
+linear-gradient(90deg, rgba(0,0,0,0.88), transparent 25%, transparent 75%, rgba(0,0,0,0.88));
+backdrop-filter: blur(2.2px);
+-webkit-backdrop-filter: blur(2.2px);
+z-index: 1;
+}
+
+.glass-texture {
+position: absolute;
+inset: 0;
+z-index: 2;
+pointer-events: none;
+opacity: 0.32;
+background:
+linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.06) 42%, transparent 58%),
+repeating-radial-gradient(circle at 40% 30%, rgba(255,255,255,0.035) 0 1px, transparent 1px 5px);
+mix-blend-mode: screen;
+}
+
+.content {
+position: relative;
+z-index: 3;
 }
 
 .hero {
 text-align: center;
-padding-top: 35px;
-margin-bottom: 38px;
-animation: fadeIn 1.4s ease forwards;
+padding-top: 56px;
+margin-bottom: 28px;
+animation: fadeIn 1.3s ease forwards;
 }
 
 .crown {
 font-size: 34px;
-margin-bottom: 8px;
-filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
+margin-bottom: 10px;
+filter: drop-shadow(0 0 12px rgba(212,175,55,0.9));
 }
 
 h1 {
-font-size: 72px;
+font-size: 74px;
+line-height: 0.86;
 letter-spacing: 12px;
-line-height: 0.9;
-color: #f5d76e;
+color: #f7d66b;
 text-shadow:
-0 0 8px rgba(255, 215, 100, 0.8),
-0 0 24px rgba(212, 175, 55, 0.45);
+0 0 8px rgba(255,219,112,0.9),
+0 0 26px rgba(212,175,55,0.58),
+0 4px 18px rgba(0,0,0,0.9);
 }
 
 .brand {
-margin-top: 12px;
-font-size: 24px;
+margin-top: 13px;
+font-size: 23px;
 letter-spacing: 9px;
-color: #d4af37;
+color: #e3bd54;
+text-shadow: 0 0 16px rgba(212,175,55,0.5);
+}
+
+.divider {
+width: 78%;
+height: 1px;
+margin: 18px auto 0;
+background: linear-gradient(90deg, transparent, rgba(212,175,55,0.85), transparent);
 }
 
 .tagline {
-margin-top: 26px;
-font-size: 12px;
-letter-spacing: 5px;
+margin-top: 18px;
+font-size: 11px;
+letter-spacing: 4px;
 text-transform: uppercase;
-color: #c9a74d;
+color: #d8b95a;
+text-shadow: 0 0 10px rgba(0,0,0,0.9);
 }
 
 .welcome {
-margin-top: 36px;
-font-size: 14px;
-letter-spacing: 4px;
+margin-top: 32px;
+font-size: 13px;
+letter-spacing: 3px;
 text-transform: uppercase;
-color: #e2c766;
+color: #e5c766;
 }
 
 .subtitle {
-margin-top: 8px;
+margin-top: 7px;
 font-size: 15px;
 font-style: italic;
-color: #b99439;
+color: #c59b3a;
 }
 
 .links {
 display: flex;
 flex-direction: column;
-gap: 16px;
+gap: 14px;
 animation: riseUp 1.2s ease forwards;
 }
 
@@ -96,81 +156,83 @@ position: relative;
 overflow: hidden;
 display: flex;
 align-items: center;
-min-height: 82px;
-padding: 0 22px;
+min-height: 76px;
+padding: 0 18px;
 text-decoration: none;
-color: #f3d26b;
-border: 1px solid rgba(212, 175, 55, 0.9);
-border-radius: 12px;
-background:
-linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01)),
-rgba(0, 0, 0, 0.62);
+color: #f4d06a;
+border: 1px solid rgba(212,175,55,0.82);
+border-radius: 11px;
+background: rgba(0,0,0,0.46);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
 box-shadow:
-inset 0 0 18px rgba(212, 175, 55, 0.08),
-0 0 22px rgba(212, 175, 55, 0.08);
+inset 0 0 20px rgba(212,175,55,0.08),
+0 0 22px rgba(212,175,55,0.12);
 }
 
 .link-card::before {
 content: "";
 position: absolute;
 top: 0;
-left: -120%;
+left: -125%;
 width: 70%;
 height: 100%;
 background: linear-gradient(
 120deg,
 transparent,
-rgba(255, 224, 130, 0.12),
-rgba(255, 224, 130, 0.55),
-rgba(255, 224, 130, 0.12),
+rgba(255,225,140,0.08),
+rgba(255,225,140,0.62),
+rgba(255,225,140,0.1),
 transparent
 );
 transform: skewX(-22deg);
-animation: shine 3.8s infinite;
+animation: shine 3.7s infinite;
 }
 
-.link-card:nth-child(2)::before { animation-delay: .5s; }
-.link-card:nth-child(3)::before { animation-delay: 1s; }
-.link-card:nth-child(4)::before { animation-delay: 1.5s; }
-.link-card:nth-child(5)::before { animation-delay: 2s; }
-
-.link-card:hover {
-transform: translateY(-2px);
-box-shadow:
-0 0 28px rgba(212, 175, 55, 0.28),
-inset 0 0 24px rgba(212, 175, 55, 0.12);
+.link-card::after {
+content: "";
+position: absolute;
+inset: 0;
+border-radius: 11px;
+background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 45%);
+pointer-events: none;
 }
+
+.link-card:nth-child(2)::before { animation-delay: .45s; }
+.link-card:nth-child(3)::before { animation-delay: .9s; }
+.link-card:nth-child(4)::before { animation-delay: 1.35s; }
+.link-card:nth-child(5)::before { animation-delay: 1.8s; }
 
 .icon {
 width: 54px;
-font-size: 28px;
+font-size: 24px;
 text-align: center;
-margin-right: 20px;
-filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.65));
+margin-right: 18px;
+filter: drop-shadow(0 0 8px rgba(212,175,55,0.7));
 }
 
 .text {
 flex: 1;
-border-left: 1px solid rgba(212, 175, 55, 0.35);
-padding-left: 20px;
+border-left: 1px solid rgba(212,175,55,0.35);
+padding-left: 18px;
 }
 
 .title {
-font-size: 22px;
+font-size: 21px;
 letter-spacing: 4px;
 text-transform: uppercase;
 }
 
 .desc {
-margin-top: 6px;
-font-size: 12px;
-letter-spacing: 3px;
+margin-top: 5px;
+font-size: 11px;
+letter-spacing: 2.5px;
 text-transform: uppercase;
-color: #b9953c;
+color: #bd9538;
 }
 
 .arrow {
-font-size: 30px;
+font-size: 29px;
 color: #d4af37;
 }
 
@@ -180,48 +242,60 @@ pointer-events: none;
 }
 
 .age-box {
-margin-top: 26px;
-padding: 18px;
-border: 1px solid rgba(212, 175, 55, 0.55);
-border-radius: 12px;
+margin-top: 24px;
+padding: 16px;
+border: 1px solid rgba(212,175,55,0.62);
+border-radius: 11px;
 display: flex;
 align-items: center;
-gap: 16px;
-background: rgba(0, 0, 0, 0.55);
+gap: 15px;
+background: rgba(0,0,0,0.52);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
 color: #d4af37;
 }
 
 .age {
-font-size: 24px;
+font-size: 22px;
 border: 1px solid #d4af37;
 border-radius: 50%;
-width: 56px;
-height: 56px;
+width: 52px;
+height: 52px;
 display: flex;
 align-items: center;
 justify-content: center;
+flex-shrink: 0;
 }
 
 .age-text {
-font-size: 11px;
-letter-spacing: 2px;
-line-height: 1.5;
+font-size: 10px;
+letter-spacing: 1.7px;
+line-height: 1.55;
 text-transform: uppercase;
+}
+
+.socials {
+display: flex;
+justify-content: center;
+gap: 32px;
+margin-top: 24px;
+font-size: 20px;
+color: #c9a64a;
 }
 
 footer {
 text-align: center;
-margin-top: 34px;
-font-size: 11px;
+margin-top: 22px;
+font-size: 10px;
 letter-spacing: 4px;
-color: #8f7330;
+color: #9b7a32;
 text-transform: uppercase;
 }
 
 @keyframes shine {
-0% { left: -120%; }
-45% { left: 130%; }
-100% { left: 130%; }
+0% { left: -125%; }
+45% { left: 135%; }
+100% { left: 135%; }
 }
 
 @keyframes fadeIn {
@@ -236,17 +310,22 @@ to { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 390px) {
 h1 {
-font-size: 60px;
+font-size: 62px;
 letter-spacing: 9px;
 }
 
 .brand {
-font-size: 20px;
+font-size: 19px;
 letter-spacing: 7px;
 }
 
 .title {
-font-size: 19px;
+font-size: 18px;
+}
+
+.page {
+padding-left: 16px;
+padding-right: 16px;
 }
 }
 </style>
@@ -254,20 +333,20 @@ font-size: 19px;
 
 <body>
 <main class="page">
+<div class="glass-texture"></div>
 
+<div class="content">
 <section class="hero">
 <div class="crown">♛</div>
 <h1>EVA</h1>
 <div class="brand">FASHIONEVA</div>
-
+<div class="divider"></div>
 <div class="tagline">model • muse • exclusive content</div>
-
 <div class="welcome">Welcome to my private world</div>
 <div class="subtitle">select your access</div>
 </section>
 
 <section class="links">
-
 <a class="link-card" href="https://onlyfans.com/fashioneva" target="_blank">
 <div class="icon">OF</div>
 <div class="text">
@@ -311,7 +390,6 @@ font-size: 19px;
 <div class="desc">Locked</div>
 </div>
 </div>
-
 </section>
 
 <section class="age-box">
@@ -322,11 +400,17 @@ You must be 18 years or older to enter
 </div>
 </section>
 
+<div class="socials">
+<span>◎</span>
+<span>✈</span>
+<span>✉</span>
+</div>
+
 <footer>
 © Eva Fashioneva<br>
 All rights reserved
 </footer>
-
+</div>
 </main>
 </body>
 </html>
