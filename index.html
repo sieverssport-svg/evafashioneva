@@ -3,241 +3,250 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Eva Fashioneva | Links</title>
+<title>Eva Fashioneva</title>
 
 <style>
 * {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 body {
 min-height: 100vh;
-background: #000;
-color: #fff;
+background:
+radial-gradient(circle at top, rgba(212, 175, 55, 0.18), transparent 35%),
+linear-gradient(180deg, #050505 0%, #000 100%);
+color: #d4af37;
+font-family: Georgia, "Times New Roman", serif;
+overflow-x: hidden;
 }
 
 .page {
-min-height: 100vh;
-max-width: 520px;
+width: 100%;
+max-width: 430px;
 margin: 0 auto;
-background: #000;
+min-height: 100vh;
+padding: 40px 22px 28px;
 position: relative;
-overflow: hidden;
-padding-bottom: 40px;
 }
 
 .hero {
-position: relative;
-height: 430px;
-background-image:
-linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.95)),
-url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80");
-background-size: cover;
-background-position: center;
-border-bottom-left-radius: 36px;
-border-bottom-right-radius: 36px;
-display: flex;
-align-items: flex-end;
-justify-content: center;
 text-align: center;
-padding: 0 24px 36px;
+padding-top: 35px;
+margin-bottom: 38px;
+animation: fadeIn 1.4s ease forwards;
 }
 
-.profile {
-width: 100%;
-}
-
-.avatar {
-width: 92px;
-height: 92px;
-border-radius: 50%;
-border: 4px solid #fff;
-object-fit: cover;
-margin-bottom: 14px;
+.crown {
+font-size: 34px;
+margin-bottom: 8px;
+filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
 }
 
 h1 {
-font-size: 42px;
-line-height: 1;
-font-weight: 800;
-letter-spacing: -1px;
-margin-bottom: 8px;
+font-size: 72px;
+letter-spacing: 12px;
+line-height: 0.9;
+color: #f5d76e;
+text-shadow:
+0 0 8px rgba(255, 215, 100, 0.8),
+0 0 24px rgba(212, 175, 55, 0.45);
 }
 
-.username {
-color: rgba(255,255,255,0.72);
-font-size: 21px;
-font-weight: 600;
-margin-bottom: 22px;
-}
-
-.socials {
-display: flex;
-justify-content: center;
-gap: 13px;
-margin-bottom: 8px;
-flex-wrap: wrap;
-}
-
-.social {
-width: 56px;
-height: 56px;
-border-radius: 50%;
-background: #fff;
-color: #000;
-display: flex;
-align-items: center;
-justify-content: center;
-text-decoration: none;
+.brand {
+margin-top: 12px;
 font-size: 24px;
-font-weight: 800;
-box-shadow: 0 8px 22px rgba(0,0,0,0.25);
-transition: transform 0.2s ease, opacity 0.2s ease;
+letter-spacing: 9px;
+color: #d4af37;
 }
 
-.social:hover {
-transform: scale(1.06);
-opacity: 0.9;
+.tagline {
+margin-top: 26px;
+font-size: 12px;
+letter-spacing: 5px;
+text-transform: uppercase;
+color: #c9a74d;
 }
 
-.content {
-padding: 26px 20px 0;
+.welcome {
+margin-top: 36px;
+font-size: 14px;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: #e2c766;
 }
 
-.headline {
-text-align: center;
-font-size: 24px;
-margin-bottom: 22px;
-font-weight: 600;
+.subtitle {
+margin-top: 8px;
+font-size: 15px;
+font-style: italic;
+color: #b99439;
 }
 
-.main-link {
-display: block;
-width: 100%;
-padding: 18px 20px;
-border-radius: 999px;
-background: linear-gradient(135deg, #ff2f92, #ff7a18);
-color: #fff;
-text-align: center;
-font-size: 22px;
-font-weight: 800;
-text-decoration: none;
-margin-bottom: 18px;
-box-shadow: 0 12px 30px rgba(255, 47, 146, 0.32);
-transition: transform 0.2s ease;
-}
-
-.main-link:hover {
-transform: translateY(-2px);
+.links {
+display: flex;
+flex-direction: column;
+gap: 16px;
+animation: riseUp 1.2s ease forwards;
 }
 
 .link-card {
+position: relative;
+overflow: hidden;
 display: flex;
 align-items: center;
-justify-content: space-between;
-gap: 16px;
-background: #111;
-border: 1px solid rgba(255,255,255,0.1);
-border-radius: 24px;
-padding: 17px 18px;
-color: #fff;
+min-height: 82px;
+padding: 0 22px;
 text-decoration: none;
-margin-bottom: 14px;
-transition: background 0.2s ease, transform 0.2s ease;
+color: #f3d26b;
+border: 1px solid rgba(212, 175, 55, 0.9);
+border-radius: 12px;
+background:
+linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01)),
+rgba(0, 0, 0, 0.62);
+box-shadow:
+inset 0 0 18px rgba(212, 175, 55, 0.08),
+0 0 22px rgba(212, 175, 55, 0.08);
 }
+
+.link-card::before {
+content: "";
+position: absolute;
+top: 0;
+left: -120%;
+width: 70%;
+height: 100%;
+background: linear-gradient(
+120deg,
+transparent,
+rgba(255, 224, 130, 0.12),
+rgba(255, 224, 130, 0.55),
+rgba(255, 224, 130, 0.12),
+transparent
+);
+transform: skewX(-22deg);
+animation: shine 3.8s infinite;
+}
+
+.link-card:nth-child(2)::before { animation-delay: .5s; }
+.link-card:nth-child(3)::before { animation-delay: 1s; }
+.link-card:nth-child(4)::before { animation-delay: 1.5s; }
+.link-card:nth-child(5)::before { animation-delay: 2s; }
 
 .link-card:hover {
-background: #191919;
 transform: translateY(-2px);
-}
-
-.link-left {
-display: flex;
-align-items: center;
-gap: 14px;
+box-shadow:
+0 0 28px rgba(212, 175, 55, 0.28),
+inset 0 0 24px rgba(212, 175, 55, 0.12);
 }
 
 .icon {
-width: 44px;
-height: 44px;
-border-radius: 50%;
-background: #fff;
-color: #000;
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: 900;
-font-size: 18px;
-flex-shrink: 0;
+width: 54px;
+font-size: 28px;
+text-align: center;
+margin-right: 20px;
+filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.65));
 }
 
-.link-title {
-font-size: 18px;
-font-weight: 750;
+.text {
+flex: 1;
+border-left: 1px solid rgba(212, 175, 55, 0.35);
+padding-left: 20px;
 }
 
-.link-subtitle {
-font-size: 14px;
-color: rgba(255,255,255,0.55);
-margin-top: 3px;
+.title {
+font-size: 22px;
+letter-spacing: 4px;
+text-transform: uppercase;
+}
+
+.desc {
+margin-top: 6px;
+font-size: 12px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: #b9953c;
 }
 
 .arrow {
-color: rgba(255,255,255,0.5);
-font-size: 24px;
+font-size: 30px;
+color: #d4af37;
 }
 
-.preview {
-margin-top: 28px;
-border-radius: 28px;
-min-height: 250px;
-background-image:
-linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.7)),
-url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80");
-background-size: cover;
-background-position: center;
+.locked {
+opacity: 0.48;
+pointer-events: none;
+}
+
+.age-box {
+margin-top: 26px;
+padding: 18px;
+border: 1px solid rgba(212, 175, 55, 0.55);
+border-radius: 12px;
 display: flex;
-align-items: flex-end;
-padding: 22px;
-overflow: hidden;
+align-items: center;
+gap: 16px;
+background: rgba(0, 0, 0, 0.55);
+color: #d4af37;
 }
 
-.preview-text {
-font-size: 27px;
-font-weight: 850;
-line-height: 1.1;
-text-shadow: 0 3px 14px rgba(0,0,0,0.55);
+.age {
+font-size: 24px;
+border: 1px solid #d4af37;
+border-radius: 50%;
+width: 56px;
+height: 56px;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-.disclaimer {
-margin-top: 24px;
-color: rgba(255,255,255,0.48);
-font-size: 12px;
-line-height: 1.45;
+.age-text {
+font-size: 11px;
+letter-spacing: 2px;
+line-height: 1.5;
+text-transform: uppercase;
+}
+
+footer {
 text-align: center;
-padding: 0 18px;
+margin-top: 34px;
+font-size: 11px;
+letter-spacing: 4px;
+color: #8f7330;
+text-transform: uppercase;
 }
 
-@media (max-width: 420px) {
-.hero {
-height: 400px;
+@keyframes shine {
+0% { left: -120%; }
+45% { left: 130%; }
+100% { left: 130%; }
 }
 
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(18px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes riseUp {
+from { opacity: 0; transform: translateY(28px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 390px) {
 h1 {
-font-size: 36px;
+font-size: 60px;
+letter-spacing: 9px;
 }
 
-.username {
+.brand {
+font-size: 20px;
+letter-spacing: 7px;
+}
+
+.title {
 font-size: 19px;
-}
-
-.social {
-width: 52px;
-height: 52px;
 }
 }
 </style>
@@ -247,110 +256,76 @@ height: 52px;
 <main class="page">
 
 <section class="hero">
-<div class="profile">
-<img
-class="avatar"
-src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80"
-alt="Profile photo"
-/>
+<div class="crown">♛</div>
+<h1>EVA</h1>
+<div class="brand">FASHIONEVA</div>
 
-<h1>Eva Fashioneva</h1>
-<div class="username">@eva_fashioneva</div>
+<div class="tagline">model • muse • exclusive content</div>
 
-<div class="socials">
-<a class="social" href="https://t.me/evafashioneva" target="_blank">✈</a>
-<a class="social" href="https://www.instagram.com/eva_fashioneva?igsh=YjFwYmlsdWVxZXVo" target="_blank">◎</a>
-<a class="social" href="https://x.com/eva_fashioneva?s=21" target="_blank">𝕏</a>
-<a class="social" href="https://throne.com/eva_fashioneva" target="_blank">♥</a>
-</div>
-</div>
+<div class="welcome">Welcome to my private world</div>
+<div class="subtitle">select your access</div>
 </section>
 
-<section class="content">
-
-<div class="headline">What you’re looking for 👇</div>
-
-<a class="main-link" href="https://onlyfans.com/fashioneva" target="_blank">
-Unlock my content
-</a>
+<section class="links">
 
 <a class="link-card" href="https://onlyfans.com/fashioneva" target="_blank">
-<div class="link-left">
 <div class="icon">OF</div>
-<div>
-<div class="link-title">OnlyFans</div>
-<div class="link-subtitle">Exclusive content</div>
-</div>
+<div class="text">
+<div class="title">OnlyFans</div>
+<div class="desc">Exclusive content</div>
 </div>
 <div class="arrow">›</div>
 </a>
 
 <a class="link-card" href="https://fansly.com/fashioneva/posts" target="_blank">
-<div class="link-left">
-<div class="icon">F</div>
-<div>
-<div class="link-title">Fansly</div>
-<div class="link-subtitle">More exclusive posts</div>
-</div>
+<div class="icon">♡</div>
+<div class="text">
+<div class="title">Fansly</div>
+<div class="desc">Daily drops</div>
 </div>
 <div class="arrow">›</div>
 </a>
 
 <a class="link-card" href="https://t.me/evafashioneva" target="_blank">
-<div class="link-left">
-<div class="icon">TG</div>
-<div>
-<div class="link-title">Telegram</div>
-<div class="link-subtitle">Private updates</div>
-</div>
-</div>
-<div class="arrow">›</div>
-</a>
-
-<a class="link-card" href="https://www.instagram.com/eva_fashioneva?igsh=YjFwYmlsdWVxZXVo" target="_blank">
-<div class="link-left">
-<div class="icon">IG</div>
-<div>
-<div class="link-title">Instagram</div>
-<div class="link-subtitle">Daily photos and stories</div>
-</div>
-</div>
-<div class="arrow">›</div>
-</a>
-
-<a class="link-card" href="https://x.com/eva_fashioneva?s=21" target="_blank">
-<div class="link-left">
-<div class="icon">𝕏</div>
-<div>
-<div class="link-title">X / Twitter</div>
-<div class="link-subtitle">Extra updates</div>
-</div>
+<div class="icon">✈</div>
+<div class="text">
+<div class="title">Telegram</div>
+<div class="desc">Private channel</div>
 </div>
 <div class="arrow">›</div>
 </a>
 
 <a class="link-card" href="https://throne.com/eva_fashioneva" target="_blank">
-<div class="link-left">
-<div class="icon">🎁</div>
-<div>
-<div class="link-title">Wishlist</div>
-<div class="link-subtitle">Support and gifts</div>
-</div>
+<div class="icon">♕</div>
+<div class="text">
+<div class="title">Throne</div>
+<div class="desc">Wishlist & support</div>
 </div>
 <div class="arrow">›</div>
 </a>
 
-<div class="preview">
-<div class="preview-text">
-I know you want more babe 💦
+<div class="link-card locked">
+<div class="icon">🔒</div>
+<div class="text">
+<div class="title">Archive</div>
+<div class="desc">Locked</div>
 </div>
-</div>
-
-<div class="disclaimer">
-18+ only. By clicking the links on this page, you confirm that you are of legal age in your country.
 </div>
 
 </section>
+
+<section class="age-box">
+<div class="age">18+</div>
+<div class="age-text">
+This website contains explicit content<br>
+You must be 18 years or older to enter
+</div>
+</section>
+
+<footer>
+© Eva Fashioneva<br>
+All rights reserved
+</footer>
 
 </main>
 </body>
